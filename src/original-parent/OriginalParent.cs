@@ -8,12 +8,12 @@ namespace BeatThat
 	/// Useful for things like a popup that gets transfered to a different parent when it opens
 	/// and should be restored to its original parent at the end of use.
 	/// </summary>
-	public class OriginalParent : MonoBehaviour 
+	public class OriginalParent : MonoBehaviour, IOriginalParent
 	{
 		public bool m_onDisableRestore = true;
 		public GameObject m_originalParent;
 
-		private bool didCapture { get; set; }
+		public bool didCapture { get; private set; }
 
 		void Start()
 		{
